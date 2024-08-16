@@ -1,8 +1,6 @@
-<div align="center">
-
-![fuligens](https://github.com/user-attachments/assets/511f020e-d333-407b-82b4-3268f46fce47)
-
-</div>
+<p align="center">
+  <img src="assets/img/fuligens.gif" alt="Gif Fuligens" />
+</p>
 
 # Catálogo Studio Ghibli
 
