@@ -1,0 +1,178 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Desktop Menu */
+.navbar{
+    background-color: #ffffff09;
+    backdrop-filter: blur(250px);
+    height: 8vh;
+    width: 100%;
+    padding: 20px;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+}
+.navgation{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & .pageTitle{
+        color: #fff;
+    }
+}
+.navgation > a > img {
+    width: 60px;
+    border-radius: 50%;
+}
+.searchBar{
+    background-color: #fff;
+    display: flex;
+    justify-content: left;
+    border-radius: 5px;
+}
+#search{
+    border: none;
+    border-right: 2px solid #999;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding-left: 15px;   
+}
+#search:focus{
+    border: none;
+    border-right: 2px solid #999;
+    outline: none;
+}
+.searchIcon{
+    margin: 5px;
+}
+
+/* Carrosel */
+
+section {
+    height: 100%;
+    position: relative;
+}
+.film-image > img{
+    width: 100%;
+}
+/* Buttons Left and right*/
+.left-button {
+    position: fixed;
+    z-index: 1;
+    top: 40%;
+    left: 0;
+    border: 2px solid transparent;
+    border-radius: 25%;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    transition: border-color 0.2s ease, border-radius 0.2s ease, left 0.5s ease;
+}
+
+.left-button i {
+    color: #fff;
+    font-size: 25px;
+    margin-right: 5px;
+}
+
+.left-button:hover {
+    background-color: #ffffff34;
+    backdrop-filter: blur(5px);
+    border-color: #fff;
+    border-radius: 50%;
+    left: 1%; 
+}
+
+.right-button {
+    position: fixed;
+    z-index: 1;
+    top: 40%;
+    right: 0;
+    border: 2px solid transparent;
+    border-radius: 25%;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    transition: border-color 0.2s ease, border-radius 0.2s ease, right 0.5s ease;
+}
+
+.right-button i {
+    color: #fff;
+    font-size: 25px;
+    margin-right: 5px;
+}
+
+.right-button:hover {
+    background-color: #ffffff34;
+    backdrop-filter: blur(5px);
+    border-color: #fff;
+    border-radius: 50%;
+    right: 1%; 
+}
+
+/* Content */
+
+.content{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    width: 50%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Media Query Responsive */
+
+@media (min-width: 1920px) {
+    .navbar{
+        padding: 50px;
+        
+        & h1{
+            font-size: 50px;
+        }
+         
+    }
+
+    .right-button,
+    .right-button:hover,
+    .left-button,
+    .left-button:hover{
+        height: 100px;
+        width: 100px;
+        
+        & i{
+            font-size: 50px; 
+        }
+    }
+    .content{
+        & .criation-film,
+        .description-film{
+            font-size: 24px;
+            font-weight: lighter;
+        }
+        & .name-film{
+            font-size: 50px;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+}
