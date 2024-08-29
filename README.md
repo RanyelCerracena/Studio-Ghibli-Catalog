@@ -6,7 +6,7 @@
 
 ## 📚 Aprendizado
 
-Neste projeto tive a oportunidade de aprender como é desenvolvida uma barra de pesquisa utilizando JavaScript. Além de colocar em prática todo meu conhecimento adquirido nas tecnologias Html e Css.
+Neste projeto pude aplicar ainda mais meus conhecimentos adquiridos no tempo em que estudei Html, Css e Javascript. Agora, meu proximo passo para aperfeiçoamento profissional é aplicar meus conhecimentos com frameworks front-end como o Vue.Js ou React, além de futuramente poder desenvolver aplicações full-stack com meus recentes estudos com ASP.NET Core.
 
 ### ❔ Sobre o projeto
 
