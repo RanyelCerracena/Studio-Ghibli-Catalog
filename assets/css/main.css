@@ -20,11 +20,6 @@ header {
     padding: 0 50px;
 }
 
-header a {
-    color: #fff;
-    font-size: 24px;
-}
-
 header nav {
     display: flex;
     justify-content: space-between;
@@ -36,6 +31,7 @@ header nav {
 header nav h1 {
     color: #fff;
     font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
 }
 
 /* CONTAINER */
@@ -62,7 +58,7 @@ header nav h1 {
 
 .container .list .list-item .content {
     position: absolute;
-    top: 20%;
+    top: 10%;
     right: 10%;
     padding-right: 30%;
     padding-left: 50px;
@@ -106,7 +102,7 @@ header nav h1 {
     backdrop-filter: blur(10px);
 }
 
-.container .thumb{
+.container .thumb {
     position: absolute;
     max-width: 96%;
     height: 200px;
@@ -115,10 +111,10 @@ header nav h1 {
     gap: 20px;
     overflow: hidden;
     left: 50%;
-    transform: translateX(-50%); 
+    transform: translateX(-50%);
 }
 
-.container .thumb .thumb-item{
+.container .thumb .thumb-item {
     height: 200px;
     min-width: 135px;
     position: relative;
@@ -193,22 +189,206 @@ header nav h1 {
     backdrop-filter: blur(10px);
 }
 
+/* Conteudo Modal*/
+
+.fade-modal {
+    background-color: #00000010;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(150px);
+    filter: blur(20px);
+    transition: opacity 0.5s ease, visibility 0.5s ease, transform .5s ease-in-out;
+}
+
+.fade-modal.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+    filter: blur(0px);
+}
+
+.modal {
+    background-color: #eee;
+    width: 90%;
+    height: 90%;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.modal::-webkit-scrollbar {
+    display: none;
+}
+
+.close-modal {
+    position: absolute;
+    background-color: transparent;
+    top: 2%;
+    right: 2%;
+    border-radius: 50%;
+    border: none;
+    width: 25px;
+    height: 25px;
+    font-size: 25px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Tabelas do Modal */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+th,
+td {
+    padding: 5px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+caption {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.film-trailer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.trailer {
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+.soundtrack {
+    margin-top: 15px;
+    display: flex;
+    width: 720px;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.soundtrack div {
+    width: 100%;
+    height: 100%;
+    margin-left: 50px;
+}
+
+.soundtrack p {
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+.watch-background {
+    height: 100%;
+    position: relative;
+}
+
+.watch-background a {
+    width: 250px;
+    height: 50px;
+    background-color: #333;
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff0000;
+    font-family: Arial, sans-serif;
+    letter-spacing: 2px;
+    font-size: 20px;
+    transition: background-color .2s ease-in-out;
+}
+
+.watch-background a:hover {
+    background-color: #444;
+}
+
+.watch-background img {
+    width: 250px;
+    border-radius: 15px;
+}
+
+.watch-background p {
+    width: px;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
 /* Animações */
 
-.container.next .thumb .thumb-item{
+.container.next .thumb .thumb-item {
     animation: effectNextThumb 0.5s linear 1 forwards;
-    
+
 }
-.container.back .thumb .thumb-item{
+
+.container.back .thumb .thumb-item {
     animation: effectBackThumb 0.5s linear 1 forwards;
 }
 
-@keyframes effectNextThumb{
+/* Animação dos Botões */
+
+.container .list .list-item:nth-last-child(1) .content .title,
+.container .list .list-item:nth-last-child(1) .content .description,
+.container .list .list-item:nth-last-child(1) .content .buttons {
+    opacity: 0;
+    transform: translateX(150px);
+    filter: blur(20px);
+    animation: showContent .75s 1 forwards;
+}
+
+@keyframes showContent {
+    to {
+        transform: translateX(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+@keyframes effectNextThumb {
     from {
         transform: translateX(150px);
     }
 }
-@keyframes effectBackThumb{
+
+@keyframes effectBackThumb {
     from {
         transform: translateX(-150px);
     }
@@ -219,7 +399,7 @@ header nav h1 {
 @media (max-width: 1213px) {
     .container .list .list-item .content {
         position: absolute;
-        top: 20%;
+        top: 10%;
         right: 10%;
         padding-right: 10%;
         padding-left: 50px;
@@ -252,7 +432,7 @@ header nav h1 {
 
 @media (max-width: 430px) {
 
-    header nav  {
+    header nav {
         margin-top: 20px;
     }
 
@@ -271,7 +451,7 @@ header nav h1 {
         text-align: justify;
     }
 
-    .container .list .list-item .content .description{
+    .container .list .list-item .content .description {
         font-size: 18px;
         margin-bottom: 0;
     }
@@ -280,11 +460,11 @@ header nav h1 {
         font-size: 47.5px;
     }
 
-    .next-films{
+    .next-films {
         right: 15px;
     }
 
-    .back-films{
+    .back-films {
         left: 15px;
     }
 }
