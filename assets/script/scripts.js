@@ -30,8 +30,8 @@ function moveItemsOnClick(type){
     }, 500);
 }
 
-const openModalButtons = document.querySelectorAll('.modal-button');
-const closeModalButtons = document.querySelectorAll('.close-modal');
+const openModalButtons = document.querySelector('.modal-button');
+const closeModalButtons = document.querySelector('.close-modal');
 
 function openModal(modal) {
     modal.classList.add('visible');
